@@ -2,7 +2,7 @@ from replit import clear
 from art import logo
 
 continue_auction = True
-AllBids = {}
+AllBids = {"names": [], "bids": []}
 
 while continue_auction:
   
@@ -15,7 +15,8 @@ while continue_auction:
 
   def add_bidder(name, bid):
     """adds bidder name and bid amount to dictionary"""
-    AllBids[name] = bid
+    AllBids["names"].append(name)
+    AllBids["bids"].append(bid)
     
   add_bidder(name, bid)
 
@@ -24,12 +25,8 @@ while continue_auction:
   else:
     continue_auction = False
 
-bid_list = []
-for key in AllBids:
-  AllBids[key] += bid_list
 
-winning_bid = max(bid_list)
-winning_name = 
+
 
 
 
