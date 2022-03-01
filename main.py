@@ -9,7 +9,7 @@ while continue_auction:
   print(logo)
   print("Welcome to the Secret Auction Program.")
   name = input("What is your name? ")
-  bid = input("What is your bid? ")
+  bid = int(input("What is your bid? "))
   more_bids = input("Are there any other bidders? Type 'yes' or 'no'. ")
 
 
@@ -25,9 +25,14 @@ while continue_auction:
   else:
     continue_auction = False
 
+def find_winner():
+  max_bid = max(AllBids["bids"])
+  winning_index = AllBids["bids"].index(max_bid)
+  winner_name = AllBids["names"][winning_index]
+  winner_bid = AllBids["bids"][winning_index]
+  print(f"The winner is {winner_name} with a bid of ${winner_bid}!")
 
-
-
+find_winner()
 
 
     
